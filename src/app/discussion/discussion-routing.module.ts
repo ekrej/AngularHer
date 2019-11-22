@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class GameRoutingModule { }
+export class DiscussionRoutingModule { }
