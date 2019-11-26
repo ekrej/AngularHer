@@ -5,7 +5,7 @@ import { GameService } from '../../../services/game.service';
 
 @Component({
   selector: 'app-add-game',
-  templateUrl: './add-game.component.html',
+  templateUrl: "./add-game.component.html",
   styleUrls: ['./add-game.component.scss']
 })
 
@@ -17,41 +17,41 @@ export class AddGameComponent implements OnInit {
 
   ngOnInit() {
     this.gameForm = new FormGroup({
-     name: new FormControl('', [
-       Validators.required
-     ]),
-     releaseDate: new FormControl('', [
-      Validators.required
-    ]),
+      name: new FormControl('', [
+        Validators.required
+      ]),
+      releaseDate: new FormControl('', [
+        Validators.required
+      ]),
       categories: this.fb.array([]),
       developer: new FormControl('', [
         Validators.required
       ]),
-   });
- }
+    });
+  }
 
- get categories() {
-  return this.gameForm.controls.categories as FormArray;
-}
+  get categories() {
+    return this.gameForm.controls.categories as FormArray;
+  }
 
-get name() {
-  return this.gameForm.get('name');
-}
+  get name() {
+    return this.gameForm.get('name');
+  }
 
-get releaseDate() {
-  return this.gameForm.get('releaseDate');
-}
+  get releaseDate() {
+    return this.gameForm.get('releaseDate');
+  }
 
-get developer() {
-  return this.gameForm.get('developer');
-}
+  get developer() {
+    return this.gameForm.get('developer');
+  }
 
-addcategory() {
-  this.categories.push(this.fb.control('', [Validators.required]));
-}
+  addcategory() {
+    this.categories.push(this.fb.control('', [Validators.required]));
+  }
 
-onSubmit() {
-  this.gameService.addGame(this.name.value, this.releaseDate.value, this.categories.value, this.developer.value);
-}
+  onSubmit() {
+    this.gameService.addGame({ name: this.name.value, releaseDate: this.releaseDate.value, categorie: this.categories.value, developer: this.developer.value });
+  }
 
 }
