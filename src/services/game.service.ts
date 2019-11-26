@@ -11,7 +11,7 @@ export class GameService{
     ) { }
 
     addGame(name: String, releaseDate: Date, categorie: [String], developer: String){
-        this.http.post<any>(`http://localhost:3000/api/game`, {
+        this.http.post<any>(`https://angularherapi.herokuapp.com/api/game`, {
             name,
             releaseDate,
             categorie,

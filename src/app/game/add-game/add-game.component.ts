@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder, FormArray, ControlContainer } from '@angular/forms';
-import { GameService } from '../../../services/game.service'
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { GameService } from '../../../services/game.service';
 
 
 @Component({
