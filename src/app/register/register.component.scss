@@ -1,6 +1,6 @@
-@import '../../../assets/variables';
+@import '../../assets/variables';
 
-.gameForm {
+.loginForm {
     .form-row {
         display: block;
     }
@@ -9,7 +9,6 @@
         background-color: $button-collor;
         border-radius: 15px;
         color: white;
-        
     }
     .error-message {
         padding: 0 18px;
@@ -20,10 +19,4 @@
         border: 2px solid $error-border-color;
     }
 
-    .roundBtn {
-        visibility: visible;
-        height: auto;
-        border-radius: 15px;
-        color: black;
-    }
 }
