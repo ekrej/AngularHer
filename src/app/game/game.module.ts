@@ -7,19 +7,24 @@ import { AddGameComponent } from "./add-game/add-game.component";
 import { GameDetailComponent } from "./game-detail/game-detail.component";
 import { GameListComponent } from './game-list/game-list.component';
 import { GameRoutingModule } from "./game-routing.module";
+import { GameCardComponent } from './game-card/game-card.component';
+
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AddGameComponent,
     GameDetailComponent,
-    GameListComponent
+    GameListComponent,
+    GameCardComponent
   ],
   imports: [
     CommonModule,
     GameRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    MatCardModule
   ],
   providers: [GameService],
   bootstrap: []

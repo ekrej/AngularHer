@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { Injectable } from "@angular/core";
+import { Game } from 'src/models/game.model';
 
 @Injectable()
 export class GameService{
@@ -20,5 +21,9 @@ export class GameService{
         .subscribe((response) => {
             this.router.navigate(['/']);
         });
+    }
+
+    getGames(){
+        return this.http.get<Game[]>('https://angularherapi.herokuapp.com/api/game')
     }
 }

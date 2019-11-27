@@ -1,9 +1,12 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
 // body background
-$background-collor:  #f3f3f3;
+$background-collor:  #9EA3B0;
 
 // button variables
-$button-collor: #4257DB;
-$button-background-color: #C2D5F8;
+$button-collor: rgb(64, 137, 185);
+$button-background-color: #f3f3f3;
 $button-delete-background-color: #F03A47;
 $button-delete-color: #EBECEE;
 
@@ -12,4 +15,5 @@ $error-border-color: #F03A47;
 $error-text-color: #F03A47;
 
 // other
-$border: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$border: 7px 6px 15px 0px  rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+

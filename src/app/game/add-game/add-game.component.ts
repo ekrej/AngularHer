@@ -51,7 +51,7 @@ export class AddGameComponent implements OnInit {
   }
 
   onSubmit() {
-    this.gameService.addGame({ name: this.name.value, releaseDate: this.releaseDate.value, categorie: this.categories.value, developer: this.developer.value });
+    this.gameService.addGame(this.name.value, this.releaseDate.value, this.categories.value, this.developer.value);
   }
 
 }

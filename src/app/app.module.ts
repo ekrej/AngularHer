@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-
+import { MatCardModule } from '@angular/material';
 import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module'
@@ -41,7 +41,8 @@ import { SigninComponent } from './signin/signin.component';
     AppRoutingModule, 
     DiscussionModule, 
     GameModule, 
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [AuthService, AuthGuard, 
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true }],
