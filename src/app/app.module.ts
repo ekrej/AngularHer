@@ -21,6 +21,7 @@ import { AuthService } from '../services/auth.service';
 import { AuthGuard } from '../services/auth-guard.service';
 import { HttpInterceptor } from './shared/http.interceptor';
 import { SigninComponent } from './signin/signin.component';
+import { NotFoundComponent } from './error/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { SigninComponent } from './signin/signin.component';
     UsecaseComponent, 
     DashboardComponent, 
     SigninComponent, 
-    RegisterComponent
+    RegisterComponent, NotFoundComponent
   ],
   imports: [
     BrowserModule, 

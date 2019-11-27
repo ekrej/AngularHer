@@ -26,4 +26,9 @@ export class GameService{
     getGames(){
         return this.http.get<Game[]>('https://angularherapi.herokuapp.com/api/game')
     }
+
+    getSingleGame(id: string){
+        console.log("getSingleGame");
+        return this.http.get<Game>(`https://angularherapi.herokuapp.com/api/game/${id}`)
+    }
 }

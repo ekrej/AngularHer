@@ -5,6 +5,7 @@ export class Game {
     name: string;
     releaseDate: string;
     developer: string;
+    categorie: [string];
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

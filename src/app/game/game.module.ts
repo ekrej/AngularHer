@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GameService } from '../../services/game.service';
+import { DiscussionService } from '../../services/discussion.service'
 import { AddGameComponent } from "./add-game/add-game.component";
 import { GameDetailComponent } from "./game-detail/game-detail.component";
 import { GameListComponent } from './game-list/game-list.component';
@@ -26,7 +27,7 @@ import { MatCardModule } from '@angular/material';
     NgbModule,
     MatCardModule
   ],
-  providers: [GameService],
+  providers: [GameService, DiscussionService],
   bootstrap: []
 })
 export class GameModule { }
