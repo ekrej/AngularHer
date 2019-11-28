@@ -1,0 +1,38 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+    <div class="form-group">
+        <div class="form-row">
+            <div class="form-input">
+                <input 
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="Username"
+                    formControlName="username"
+                    [ngClass]="!username.untouched && username.hasError('required') ? 'field-error' : ''">
+                <label for="username">Username</label>
+            </div>
+            <div class="error-message" *ngIf="!username.untouched && username.hasError('required')">
+                Username is required.
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-input">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="password"
+                    placeholder="Password" 
+                    type="password"
+                    formControlName="password"
+                    [ngClass]="!password.untouched && password.hasError('required') ? 'field-error' : ''">
+                <label for="password">Password</label>
+            </div>
+            <div class="error-message" *ngIf="!password.untouched && password.hasError('required')">
+                Password is required.
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary roundBtn" type="submit" [disabled]="!loginForm.valid">Login</button>
+        </div>
+    </div>
+</form>
