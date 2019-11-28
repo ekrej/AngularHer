@@ -31,7 +31,8 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
     UsecaseComponent, 
     DashboardComponent, 
     SigninComponent, 
-    RegisterComponent, NotFoundComponent
+    RegisterComponent, 
+    NotFoundComponent
   ],
   imports: [
     BrowserModule, 

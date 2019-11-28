@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Discussion } from 'src/models/discussion.model';
 
 @Component({
   selector: 'app-discussion-card',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./discussion-card.component.scss']
 })
 export class DiscussionCardComponent implements OnInit {
-
+  @Input() discussion: Discussion;
+  date: String
+  
   constructor() { }
 
   ngOnInit() {
+    this.date = new Date(this.discussion.startDate).toLocaleDateString()
+    console.log("discussion: " + this.discussion._id)
   }
 
 }

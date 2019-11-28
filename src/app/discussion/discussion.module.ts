@@ -4,7 +4,6 @@ import { AddDiscussionComponent } from './add-discussion/add-discussion.componen
 import { DiscussionDetailComponent } from './discussion-detail/discussion-detail.component';
 import { DiscussionListComponent } from './discussion-list/discussion-list.component';
 import { DiscussionRoutingModule } from "./discussion-routing.module";
-import { DiscussionCardComponent } from './discussion-card/discussion-card.component';
 
 
 
@@ -12,7 +11,7 @@ import { DiscussionCardComponent } from './discussion-card/discussion-card.compo
   declarations: [
     AddDiscussionComponent, 
     DiscussionDetailComponent, 
-    DiscussionListComponent, DiscussionCardComponent],
+    DiscussionListComponent],
   imports: [
     CommonModule,
     DiscussionRoutingModule
