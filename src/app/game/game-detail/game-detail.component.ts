@@ -36,7 +36,6 @@ export class GameDetailComponent implements OnInit {
       if(!game) this.router.navigate(['/error/not-found'])
       this.game = game;
       this.date = new Date(this.game.releaseDate).toLocaleDateString()
-      console.log(this.game.categorie);
       this.getDiscussionsForGame()
     },
     error => {
@@ -48,7 +47,6 @@ export class GameDetailComponent implements OnInit {
   getDiscussionsForGame(){
     this.discussionService.getDiscussionsOfGame(this.id)
     .subscribe( discussions => {
-      console.log(discussions)
       this.discussions = discussions
     },
     error => {

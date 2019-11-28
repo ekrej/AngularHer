@@ -12,12 +12,19 @@ export class DiscussionService{
         private router: Router
     ) { }
 
-    addDiscussion(){
-
+    addDiscussion(name: string, content: string, gameId: string, username: string){
+        return this.http.post<any>(`https://angularherapi.herokuapp.com/api/discussion`, {
+            name, 
+            content, 
+            gameId, 
+            username,
+        })        .subscribe((response) => {
+            this.router.navigate(['/discussion']);
+        });
     }
 
     getDiscussions(){
-
+        return this.http.get<Discussion[]>(`https://angularherapi.herokuapp.com/api/discussion`)
     }
 
     getDiscussionsOfGame(id: string){

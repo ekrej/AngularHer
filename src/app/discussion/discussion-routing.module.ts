@@ -10,12 +10,13 @@ import { AddDiscussionComponent } from "./add-discussion/add-discussion.componen
 const routes: Routes = [
   { path: '', component: DiscussionListComponent},
   { path: 'add', component: AddDiscussionComponent},
+  { path: 'add/:id', component: AddDiscussionComponent},
   { path: 'detail/:id', component: DiscussionDetailComponent},
 ]
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class DiscussionRoutingModule { }
