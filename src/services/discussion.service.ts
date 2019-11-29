@@ -30,4 +30,8 @@ export class DiscussionService{
     getDiscussionsOfGame(id: string){
        return this.http.get<Discussion[]>(`https://angularherapi.herokuapp.com/api/discussion/game/${id}`)
     }
+
+    getDiscussionbyId(id: string){
+        return this.http.get<Discussion>(`https://angularherapi.herokuapp.com/api/discussion/${id}`)
+    }
 }

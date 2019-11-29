@@ -1,0 +1,36 @@
+@import '../../../assets/variables';
+@import '../../../styles.scss';
+
+.comment-card {
+    background-color: $button-background-color;
+    margin: auto;
+    margin-bottom: 16px;
+    min-height: 70%;
+    max-width: 60%;
+    box-shadow: $border;
+    @include md {
+        max-width: 70%;
+    }
+
+    @include sm {
+        max-width: 90%
+    }
+}
+
+.content-card {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.clickable-box{
+    cursor: pointer;
+}
+
+.wrap-text{
+    overflow-wrap: break-word !important;
+}
+
+.na-text {
+    padding-top: 5px;
+    font-size: 26px !important;
+}

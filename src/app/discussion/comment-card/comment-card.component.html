@@ -1,0 +1,14 @@
+<mat-card *ngIf="comment" class="comment-card clickable-box " >
+    <mat-card-content>
+        <div class="d-flex">
+            <p class="content-card wrap-text">{{comment.content}} </p>
+        </div>
+        <small class="content-card" style="float: right;right: 0px" > {{upvotes}}</small>
+        <small class="content-card"style="float: right;right: 0px"> {{downvotes}}</small>
+        <div class="d-flex">
+            <small class="content-card wrap-text">{{comment.user}} </small>
+        </div>  
+        </mat-card-content>
+        
+
+</mat-card>

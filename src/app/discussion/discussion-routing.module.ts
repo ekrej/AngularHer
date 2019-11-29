@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: DiscussionListComponent},
   { path: 'add', component: AddDiscussionComponent},
   { path: 'add/:id', component: AddDiscussionComponent},
-  { path: 'detail/:id', component: DiscussionDetailComponent},
+  { path: ':id', component: DiscussionDetailComponent},
 ]
 
 

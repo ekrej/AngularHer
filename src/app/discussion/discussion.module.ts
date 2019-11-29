@@ -8,13 +8,17 @@ import { DiscussionCardComponent } from "./discussion-card/discussion-card.compo
 
 import { MatCardModule, MatFormFieldModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommentCardComponent } from './comment-card/comment-card.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
 
 @NgModule({
   declarations: [
     AddDiscussionComponent, 
     DiscussionDetailComponent, 
     DiscussionListComponent,
-    DiscussionCardComponent
+    DiscussionCardComponent,
+    CommentCardComponent,
+    AddCommentComponent
   ],
   imports: [
     CommonModule,

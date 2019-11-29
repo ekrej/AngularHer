@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Discussion } from 'src/models/discussion.model';
 
+
 @Component({
   selector: 'app-discussion-card',
   templateUrl: './discussion-card.component.html',
@@ -26,7 +27,6 @@ export class DiscussionCardComponent implements OnInit {
     }else {
       this.downvotes = 0;
     }
-    console.log("discussion: " + this.discussion._id)
   }
 
 }

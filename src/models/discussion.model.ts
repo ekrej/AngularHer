@@ -9,5 +9,5 @@ export class Discussion {
     gameId: String
     upvotesArray: []
     downvotesArray: []
-    comment: []
+    comments: []
 }
