@@ -4,6 +4,7 @@ import { DiscussionService } from 'src/services/discussion.service';
 import { filter, tap } from 'rxjs/operators';
 import { Discussion } from 'src/models/discussion.model';
 import { Comment } from '../../../models/comment.model'
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-discussion-detail',
@@ -12,16 +13,18 @@ import { Comment } from '../../../models/comment.model'
 })
 export class DiscussionDetailComponent implements OnInit {
  
-  constructor(private route: ActivatedRoute, private discussionService: DiscussionService) { }
+  constructor(private route: ActivatedRoute, private discussionService: DiscussionService, private authService: AuthService) { }
   id: string;
   discussion: Discussion;
   comments: Comment[];
   date: String;
   upvotes: number;
   downvotes: number;
+  user: string;
+  isUser: Boolean
 
   ngOnInit() {
-
+    this.user = this.authService.getUser();
     this.route.params.pipe(
       filter(params => params['id']),
       filter(params => !!params),
@@ -58,6 +61,14 @@ export class DiscussionDetailComponent implements OnInit {
     if(this.discussion.comments){
       this.comments = this.discussion.comments
     }
+    this.setUser()
   }
+
+  setUser(){
+    if(this.user == this.discussion.user){
+      this.isUser = true;
+    }
+  }
+
 
 }

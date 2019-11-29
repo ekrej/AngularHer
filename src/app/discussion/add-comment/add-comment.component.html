@@ -1,1 +1,16 @@
-<p>add-comment works!</p>
+<button type="button" class="btn btn-primary addbtn" (click)="loadForm()" [disabled]="addComment">leave a comment</button>
+
+<div *ngIf="showIt" class="comment-card clickable-box ">
+    <form [formGroup]="discussionForm" (ngSubmit)="onSubmit()" class="discussionForm">
+        <div class="form-input inputfield">
+            <textarea class="form-control" rows="5" cols="4" id="content" placeholder="write a comment"
+                formControlName="content"
+                [ngClass]="!content.untouched && content.hasError('required') ? 'field-error' : ''"></textarea>
+        </div>
+
+        <div>
+            <button class="btn btn-primary roundBtn" type="submit" [disabled]="!discussionForm.valid">add
+                discussion</button>
+        </div>
+    </form>
+</div>

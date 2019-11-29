@@ -1,0 +1,38 @@
+@import '../../../assets/variables';
+@import '../../../styles.scss';
+
+.discussion-card {
+    background-color: $button-background-color;
+    margin: auto;
+    margin-bottom: 16px;
+    min-height: 70%;
+    max-width: 60%;
+    box-shadow: $border;
+    @include md {
+        max-width: 70%;
+    }
+
+    @include sm {
+        max-width: 90%
+    }
+}
+
+.content-card {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.addbtn {
+    float: right;
+    background-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    box-shadow: $border;
+    margin-bottom: 15px;
+}
+
+.inputfield{
+    width: 60% !important; 
+    margin: 0 auto !important; 
+    margin-bottom: 15px !important;
+}

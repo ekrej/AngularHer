@@ -10,6 +10,8 @@ import { MatCardModule, MatFormFieldModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommentCardComponent } from './comment-card/comment-card.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { CommentService } from 'src/services/comment.service';
+import { DiscussionService } from 'src/services/discussion.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: [CommentService, DiscussionService],
 })
 export class DiscussionModule { }
