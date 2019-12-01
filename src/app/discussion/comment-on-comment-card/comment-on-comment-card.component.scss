@@ -2,11 +2,10 @@
 @import '../../../styles.scss';
 
 .comment-card {
-    background-color: $commennt-on-comment-color;
     margin: auto;
     margin-bottom: 16px;
     min-height: 70%;
-    max-width: 50%;
+
     box-shadow: $border;
     @include md {
         max-width: 60%;
@@ -15,6 +14,32 @@
     @include sm {
         max-width: 80%
     }
+}
+
+.background1{
+    background-color: $button-background-color;
+    max-width: 50%;
+    margin-left: 30%;
+}
+.background2{
+    background-color: #c4c4c4;
+    max-width: 45%;
+    margin-left: 35%;
+}
+.background3{
+    background-color: #aeaeae;
+    max-width: 40%;
+    margin-left: 40%;
+}
+.background4{
+    background-color: #989898;
+    max-width: 35%;
+    margin-left: 45%;
+}
+.background5{
+    background-color: #828282;
+    max-width: 35%;
+    margin-left: 45%;
 }
 
 .content-card {

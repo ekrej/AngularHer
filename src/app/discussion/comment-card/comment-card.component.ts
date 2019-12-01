@@ -11,9 +11,11 @@ export class CommentCardComponent implements OnInit {
   comments: Comment[];
   upvotes: number;
   downvotes: number;
+  depth: number
   constructor() { }
 
   ngOnInit() {
+    this.depth = 0;
     console.log(this.comment)
     if(this.comment.upvotesArray){
       this.upvotes = this.comment.upvotesArray.length
