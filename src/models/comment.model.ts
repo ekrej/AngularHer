@@ -5,5 +5,5 @@ export class Comment {
     user: String
     upvotesArray: [String]
     downvotesArray: [String]
-    comment: Comment[]
+    comments: Comment[]
 }

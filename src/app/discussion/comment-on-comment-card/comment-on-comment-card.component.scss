@@ -2,18 +2,18 @@
 @import '../../../styles.scss';
 
 .comment-card {
-    background-color: $button-background-color;
+    background-color: $commennt-on-comment-color;
     margin: auto;
     margin-bottom: 16px;
     min-height: 70%;
-    max-width: 60%;
-    box-shadow: 10px 10px 5px 0px rgba(50, 50, 50, 0.75);
+    max-width: 50%;
+    box-shadow: $border;
     @include md {
-        max-width: 70%;
+        max-width: 60%;
     }
 
     @include sm {
-        max-width: 90%
+        max-width: 80%
     }
 }
 

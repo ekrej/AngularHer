@@ -20,6 +20,8 @@
     <app-add-comment [id]="id" [onDiscussion]="true"></app-add-comment>
   </div>
   <div *ngIf="comments" >
-    <app-comment-card class="" *ngFor="let comment of comments;" [comment]="comment"></app-comment-card>
+    <app-comment-card class="" *ngFor="let comment of comments;" [comment]="comment" [discussionId]="discussion._id"></app-comment-card>
   </div>
+
+  
 

@@ -11,6 +11,7 @@ export class AddCommentComponent implements OnInit {
   @Input() id: string
   @Input() onComment;
   @Input() onDiscussion;
+  @Input() discussion: string
   showIt: boolean;
   commentForm: FormGroup;
 
@@ -38,7 +39,8 @@ export class AddCommentComponent implements OnInit {
     if (this.onDiscussion == true) {
       this.commentService.addCommentOnDiscussion(user, this.content.value, this.id)
     } else if (this.onComment == true) {
-      this.commentService.addCommentOnComment(user, this.content.value, this.id)
+      console.log(this.discussion)
+      this.commentService.addCommentOnComment(user, this.content.value, this.id, this.discussion)
     }
 
   }

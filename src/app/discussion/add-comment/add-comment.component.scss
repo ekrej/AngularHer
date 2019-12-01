@@ -1,7 +1,7 @@
 @import '../../../assets/variables';
 @import '../../../styles.scss';
 
-.discussion-card {
+.commentForm-card {
     background-color: $button-background-color;
     margin: auto;
     margin-bottom: 16px;
@@ -23,12 +23,31 @@
 }
 
 .addbtn {
+    //float: right;
+    background-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    box-shadow: $border;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.leavebtn {
     float: right;
     background-color: $button-collor;
     color: $button-background-color;
     border-radius: 15px;
     box-shadow: $border;
+}
+
+.leavebtncomment {
+    float: right;
+    background-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    margin-right: 20%;
     margin-bottom: 15px;
+    box-shadow: $border;
 }
 
 .inputfield{
@@ -36,3 +55,9 @@
     margin: 0 auto !important; 
     margin-bottom: 15px !important;
 }
+
+.clearfix::after {
+    clear: both;
+    display: block;
+    margin-bottom: 15px;
+  }

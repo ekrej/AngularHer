@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Comment } from '../../../models/comment.model';
 @Component({
-  selector: 'app-comment-card',
-  templateUrl: './comment-card.component.html',
-  styleUrls: ['./comment-card.component.scss']
+  selector: 'app-comment-on-comment-card',
+  templateUrl: './comment-on-comment-card.component.html',
+  styleUrls: ['./comment-on-comment-card.component.scss']
 })
-export class CommentCardComponent implements OnInit {
+export class CommentOnCommentCardComponent implements OnInit {
   @Input() comment: Comment
   @Input() discussionId: string;
   comments: Comment[];
