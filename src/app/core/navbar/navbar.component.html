@@ -21,9 +21,6 @@
       <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" [routerLinkActive]="['active']">Link</a>
-          </li>
-          <li class="nav-item">
             <a
               class="nav-link disabled"
               routerLink="/"
@@ -46,23 +43,40 @@
                   [routerLinkActive]="['active']"
                   [routerLinkActiveOptions]="{ exact: true }"
                 >
-                  Game List
+                  Games
                 </button>
                 <button
                   class="dropdown-item"
-                  routerLink="/"
+                  routerLink="/game/add"
                   [routerLinkActive]="['active']"
                   [routerLinkActiveOptions]="{ exact: true }"
                 >
-                  Another Action
+                  add game
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>
+                Discussion
+              </button>
+              <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <button
+                  class="dropdown-item"
+                  routerLink="/discussion"
+                  [routerLinkActive]="['active']"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                >
+                  Discussions
                 </button>
                 <button
                   class="dropdown-item"
-                  routerLink="/"
+                  routerLink="/discussion/add"
                   [routerLinkActive]="['active']"
                   [routerLinkActiveOptions]="{ exact: true }"
                 >
-                  Something else is here
+                  add discussion
                 </button>
               </div>
             </div>
@@ -85,7 +99,7 @@
             </ng-template>
             <ng-template [ngIf]="!authService.isAuthenticated()">
                 <li class="nav-item">
-                  <a class="roundBtn nav-item btn btn-primary button-right" routerLink="/login" [routerLinkActive]="['active']">Log in</a>
+                  <a class="roundBtn nav-item btn btn-primary button-right" style="margin-right: 5px;" routerLink="/login" [routerLinkActive]="['active']">Log in</a>
                 </li>
                 <li class="nav-item">
                   <a class="roundBtn nav-item btn btn-primary button-right" routerLink="/register" [routerLinkActive]="['active']">register</a>

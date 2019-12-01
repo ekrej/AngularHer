@@ -8,8 +8,8 @@
         float: right;
         background-color: $button-collor;
         border-radius: 15px;
-        color: white;
-        
+        color: $button-background-color;
+        box-shadow: $border;
     }
     .error-message {
         padding: 0 18px;
@@ -24,6 +24,7 @@
         visibility: visible;
         height: auto;
         border-radius: 15px;
-        color: black;
+        color: $button-background-color;
+        box-shadow: $border;
     }
 }

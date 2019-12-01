@@ -19,7 +19,7 @@ export class GameService{
             developer
         })
         .subscribe((response) => {
-            this.router.navigate(['/']);
+            this.router.navigate(['/game']);
         });
     }
 

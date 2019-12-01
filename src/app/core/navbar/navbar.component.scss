@@ -29,7 +29,8 @@
     visibility: visible;
     height: auto;
     border-radius: 15px;
-    color: black;
+    color: $button-background-color;
     background-color: $button-collor;
+    box-shadow: $border;
 }
 

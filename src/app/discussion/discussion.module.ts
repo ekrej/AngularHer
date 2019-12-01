@@ -4,17 +4,33 @@ import { AddDiscussionComponent } from './add-discussion/add-discussion.componen
 import { DiscussionDetailComponent } from './discussion-detail/discussion-detail.component';
 import { DiscussionListComponent } from './discussion-list/discussion-list.component';
 import { DiscussionRoutingModule } from "./discussion-routing.module";
+import { DiscussionCardComponent } from "./discussion-card/discussion-card.component";
 
-
+import { MatCardModule, MatFormFieldModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommentCardComponent } from './comment-card/comment-card.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
+import { CommentService } from 'src/services/comment.service';
+import { DiscussionService } from 'src/services/discussion.service';
+import { CommentOnCommentCardComponent } from './comment-on-comment-card/comment-on-comment-card.component';
 
 @NgModule({
   declarations: [
     AddDiscussionComponent, 
     DiscussionDetailComponent, 
-    DiscussionListComponent],
+    DiscussionListComponent,
+    DiscussionCardComponent,
+    CommentCardComponent,
+    AddCommentComponent,
+    CommentOnCommentCardComponent
+  ],
   imports: [
     CommonModule,
-    DiscussionRoutingModule
-  ]
+    DiscussionRoutingModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [CommentService, DiscussionService],
 })
 export class DiscussionModule { }

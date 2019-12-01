@@ -1,0 +1,25 @@
+<div *ngIf="onDiscussion"class="clearfix">
+    <button type="button" class="btn btn-primary leavebtn " (click)="loadForm()" [disabled]="addComment">leave a
+        comment</button>
+</div>
+<div *ngIf="onComment"class="">
+    <button type="button" class="btn btn-primary leavebtncomment " (click)="loadForm()" [disabled]="addComment">
+        comment</button>
+</div>
+<form [formGroup]="commentForm" (ngSubmit)="onSubmit()" class="commentForm">
+    <div *ngIf="showIt" class="comment-card clickable-box ">
+
+        <div class="form-input inputfield">
+            <textarea class="form-control" rows="5" cols="4" id="content" placeholder="write a comment"
+                formControlName="content"
+                [ngClass]="!content.untouched && content.hasError('required') ? 'field-error' : ''"></textarea>
+            <div>
+                <button class="btn btn-primary addbtn" type="submit" [disabled]="!commentForm.valid">add
+                    discussion</button>
+            </div>
+        </div>
+
+
+
+    </div>
+</form>

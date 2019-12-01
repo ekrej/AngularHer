@@ -1,0 +1,13 @@
+<mat-card *ngIf="discussion" class="discussion-card clickable-box " routerLink="/discussion/{{discussion._id}}">
+    <mat-card-header>
+      <mat-card-title>{{discussion.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="d-flex"style="float: right;">
+          <small class="content-card" >start date: {{date}}</small>
+        </div>
+        <div class="d-flex">
+            <p class="content-card">{{discussion.content}} </p>
+          </div>
+      </mat-card-content>
+</mat-card>

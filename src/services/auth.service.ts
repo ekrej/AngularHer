@@ -12,7 +12,7 @@ export class AuthService {
         private router: Router
     ) { }
 
-    signinUser(username: String, password: String) {
+    signinUser(username: string, password: string) {
         this.logout();
         
         this.http.post<any>(`https://angularherapi.herokuapp.com/api/user/login`, {
@@ -20,6 +20,7 @@ export class AuthService {
             password
         }, {headers:  this.httpHeaders})
             .subscribe((response) => {
+                localStorage.setItem("user", username)
                 localStorage.setItem("token", response.token);
                 this.router.navigate(['/']);
             });
@@ -47,5 +48,9 @@ export class AuthService {
     
     getToken(): String {
         return localStorage.getItem('token');
+    }
+
+    getUser(): string {
+        return localStorage.getItem('user');
     }
 }

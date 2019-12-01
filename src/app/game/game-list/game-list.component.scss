@@ -5,7 +5,7 @@
     .form-row {
         display: block;
     }
-    .btn {
+    .bttn {
         border: solid $button-background-color;
         border-width: 1 1px;
         border-radius: 15px;
@@ -31,4 +31,11 @@
     }
     .field-error {
         border: 2px solid $error-border-color;
+    }
+    .addbtn {
+        float: right;
+        background-color: $button-collor;
+        color: $button-background-color;
+        border-radius: 15px;
+        box-shadow: $border;
     }

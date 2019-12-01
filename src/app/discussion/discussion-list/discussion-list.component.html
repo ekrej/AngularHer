@@ -1,1 +1,6 @@
-<p>discussion-list works!</p>
+<button class="btn btn-primary addbtn" routerLink="/discussion/add">start a Discussion</button> 
+<h1 id="title-text">Discussions</h1>
+
+<div *ngIf="discussions" >
+    <app-discussion-card class="" *ngFor="let discussion of discussions;" [discussion]="discussion"></app-discussion-card>
+</div>

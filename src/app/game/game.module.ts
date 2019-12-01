@@ -9,7 +9,7 @@ import { GameDetailComponent } from "./game-detail/game-detail.component";
 import { GameListComponent } from './game-list/game-list.component';
 import { GameRoutingModule } from "./game-routing.module";
 import { GameCardComponent } from './game-card/game-card.component';
-import {DiscussionCardComponent} from '../discussion/discussion-card/discussion-card.component'
+import { DiscussionCardComponent } from './discussion-card/discussion-card.component'
 
 import { MatCardModule } from '@angular/material';
 
