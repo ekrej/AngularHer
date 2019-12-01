@@ -1,0 +1,22 @@
+@import '../../assets/variables';
+
+.loginForm {
+    .form-row {
+        display: block;
+    }
+    .btn {
+        float: right;
+        background-color: $button-collor;
+        color: $button-background-color;
+        border-radius: 15px;
+        box-shadow: $border;
+    }
+    .error-message {
+        padding: 0 18px;
+        color: $error-text-color;
+        font-weight: bold;
+    }
+    .field-error {
+        border: 2px solid $error-border-color;
+    }   
+}

@@ -1,1 +1,27 @@
-<p>discussion-detail works!</p>
+<button *ngIf="isUser" class="btn btn-primary addbtn" routerLink="/discussion/edit">edit Discussion</button> 
+<mat-card class="game-card col-lg-12 child-component" *ngIf="discussion">
+        <div class="col-lg-4" style="float: right;">
+        <small class="list-item">start date: {{date}}</small>
+      </div
+      ><mat-card-header>
+      <mat-card-title id="title-card">{{discussion.name}}</mat-card-title>
+    </mat-card-header>      
+
+    <mat-card-content>
+
+      <div class="container-fluid">
+        <div class="row">
+          <p class="col-lg-8">{{discussion.content}}</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div >
+    <app-add-comment [id]="id" [onDiscussion]="true"></app-add-comment>
+  </div>
+  <div *ngIf="comments" >
+    <app-comment-card class="" *ngFor="let comment of comments;" [comment]="comment" [discussionId]="discussion._id"></app-comment-card>
+  </div>
+
+  
+

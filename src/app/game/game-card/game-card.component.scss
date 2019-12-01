@@ -1,0 +1,31 @@
+@import '../../../assets/variables';
+@import '../../../styles.scss';
+
+.game-item-card {
+    background-color: $button-background-color;
+    margin: auto;
+    margin-bottom: 16px;
+    max-width: 40%;
+    box-shadow: $border;
+    @include md {
+        max-width: 40%;
+    }
+
+    @include sm {
+        max-width: 90%
+    }
+}
+
+.content-card {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.clickable-box{
+    cursor: pointer;
+}
+
+.na-text {
+    padding-top: 5px;
+    font-size: 26px !important;
+}

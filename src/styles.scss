@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+$medium: 1160px;
+$small: 835px;
+
+.main{
+    background-color: background-collor;
+}
+$colors: (
+    primary: #1552b5,
+    primary-light: #2267d6,
+    secondary: #FFFFFF
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+@mixin md {
+    @media(max-width: #{$medium}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media(max-width: #{$small}) {
+        @content;
+    }
+}
+
+.api-error{
+    color: red;
+}

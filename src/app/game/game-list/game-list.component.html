@@ -1,1 +1,6 @@
-<p>game-list works!</p>
+
+<button class="btn btn-primary addbtn" routerLink="/game/add">add game</button> 
+<h1 id="title-text">Games</h1>
+<div *ngIf="games" >
+    <app-game-card class="" *ngFor="let game of games;" [game]="game"></app-game-card>
+</div>

@@ -1,0 +1,84 @@
+@import '../../../styles.scss';
+@import '../../../assets/variables';
+
+.game-card {
+    margin: auto;
+    max-width: 50%;
+
+    @include sm {
+        max-width: 90%
+    }
+}
+
+.rating-buttons-div {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+#title-card {
+    font-size: 30px;
+}
+
+.list-item {
+    margin: 0px 0px 3px 0px;
+}
+
+.edit-buttons {
+    display: block;
+    margin: 10px 0 10px auto;
+    //text-align: right;
+}
+
+.new-game-button {
+    float: right;
+    margin-right: 30px;
+    margin-bottom: 14px;
+
+    @include sm {
+        float: none;
+        margin-left: auto;
+        display: block;
+        margin-right: 14px;
+    }
+}
+
+.responsive-button {
+    @include sm {
+        display: block;
+    }
+}
+
+#circle-rating {
+    border-radius: 50%;
+
+    width: 70px;
+    height: 70px;
+    padding: 0px;
+    
+    background: #fff;
+    background-color: #1552b5;
+    color: #FFF;
+    text-align: center;
+    
+    padding-right: 2px;
+    font-size: 48px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+
+.child-component {
+    margin-bottom: 14px !important;
+}
+
+.na-text {
+    padding-top: 7px !important;
+    font-size: 35px !important;
+}
+
+.addbtn {
+    float: right;
+    background-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    box-shadow: $border;
+}

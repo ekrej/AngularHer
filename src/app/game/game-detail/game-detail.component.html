@@ -1,1 +1,23 @@
-<p>game-detail works!</p>
+<button class="btn btn-primary addbtn" routerLink="/discussion/add/{{id}}">start a Discussion</button> 
+<mat-card class="game-card col-lg-12 child-component" *ngIf="game">
+    <mat-card-header>
+      <mat-card-title id="title-card">{{game.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div class="container-fluid">
+        <div class="row">
+          <p class="col-lg-8">{{game.description}}</p>
+          <div class="col-lg-4">
+            <p class="list-item">Release date: {{date}}</p>
+            <p class="list-item">Developer: {{game.developer}}</p>
+            <p class="list-item">categories: {{game.categorie.join(', ')}}</p>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div *ngIf="discussions" >
+    <app-game-discussion-card class="" *ngFor="let discussion of discussions;" [discussion]="discussion"></app-game-discussion-card>
+</div>
