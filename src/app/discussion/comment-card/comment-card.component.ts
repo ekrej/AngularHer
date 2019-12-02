@@ -11,10 +11,12 @@ export class CommentCardComponent implements OnInit {
   comments: Comment[];
   upvotes: number;
   downvotes: number;
-  depth: number
+  depth: number;
+  edit: boolean;
   constructor() { }
 
   ngOnInit() {
+    this.edit = false;
     this.depth = 0;
     console.log(this.comment)
     if(this.comment.upvotesArray){
@@ -34,6 +36,10 @@ export class CommentCardComponent implements OnInit {
     if(this.comment.comments){
       this.comments = this.comment.comments
     }
+  }
+
+  setEdit(){
+    this.edit = !this.edit
   }
 
 }

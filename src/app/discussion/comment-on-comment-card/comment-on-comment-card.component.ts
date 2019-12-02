@@ -11,6 +11,7 @@ export class CommentOnCommentCardComponent implements OnInit {
   comments: Comment[];
   upvotes: number;
   downvotes: number;
+  edit: boolean;
   @Input() depth: number
   constructor() { }
 
@@ -35,5 +36,9 @@ export class CommentOnCommentCardComponent implements OnInit {
     if(this.comment.comments){
       this.comments = this.comment.comments
     }
+  }
+
+  setEdit(){
+    this.edit = !this.edit
   }
 }

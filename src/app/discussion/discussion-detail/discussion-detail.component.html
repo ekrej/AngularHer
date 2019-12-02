@@ -1,5 +1,5 @@
-<button *ngIf="isUser" class="btn btn-primary addbtn" routerLink="/discussion/edit">edit Discussion</button> 
 <mat-card class="game-card col-lg-12 child-component" *ngIf="discussion">
+    <button type="button" *ngIf="isUser" [disabled]="!isUser" class="btn btn-primary addbtn" routerLink="/discussion/edit/{{id}}">edit Discussion</button> 
         <div class="col-lg-4" style="float: right;">
         <small class="list-item">start date: {{date}}</small>
       </div
