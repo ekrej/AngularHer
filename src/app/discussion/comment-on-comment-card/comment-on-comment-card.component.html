@@ -15,8 +15,19 @@
         <p class="content-card wrap-text">{{comment.content}} </p>
       </div>
 
-      <small class="content-card" style="float: right;right: 0px"> {{upvotes}}</small>
-      <small class="content-card" style="float: right;right: 0px"> {{downvotes}}</small>
+      <div style="margin-bottom: 10px">
+          <a (click)="downvote()" class="clickable-box" style="margin-right: 15px;float: right;right: 0px;">
+
+              <i class="fas fa-arrow-alt-circle-down fa-2x downvote"></i>
+              <small class="counter">{{comment.downvotes}}</small>
+
+          </a>
+          <a (click)="upvote()" class="clickable-box" style="margin-right: 15px;float: right;right: 0px;">
+              <i class="fas fa-arrow-alt-circle-up fa-2x upvote"></i>
+              <small class="counter">{{comment.upvotes}}</small>
+
+          </a>
+      </div>
       <div class="d-flex">
         <small class="content-card wrap-text">{{comment.user}} </small>
       </div>

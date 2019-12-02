@@ -42,20 +42,32 @@ export class CommentService {
     updateComment(content: string, id: string, discussion: string){
         this.http.put<any>(`https://angularherapi.herokuapp.com/api/comment/${id}`, {
             content
-        })
-            .subscribe((response) => {
+        }).subscribe((response) => {
                 this.router.navigateByUrl('/discussion', { skipLocationChange: true }).then(() => {
                     this.router.navigate([`/discussion/${discussion}`]);
                 });
             })
     }
+    
 
-    getComments() {
-
+    upvote(id, username, discussion){
+        this.http.post<any>(`https://angularherapi.herokuapp.com/api/comment/${id}/upvote`, {
+            username
+        }).subscribe((response) => {
+            this.router.navigateByUrl('/discussion', { skipLocationChange: true }).then(() => {
+                this.router.navigate([`/discussion/${discussion}`]);
+            });
+        })
     }
 
-    getCommentofComment() {
-
+    downvote(id, username, discussion){
+        this.http.post<any>(`https://angularherapi.herokuapp.com/api/comment/${id}/downvote`, {
+            username
+        }).subscribe((response) => {
+            this.router.navigateByUrl('/discussion', { skipLocationChange: true }).then(() => {
+                this.router.navigate([`/discussion/${discussion}`]);
+            });
+        })
     }
 
 }

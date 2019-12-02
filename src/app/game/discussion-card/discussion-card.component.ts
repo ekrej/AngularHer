@@ -14,7 +14,6 @@ export class DiscussionCardComponent implements OnInit {
 
   ngOnInit() {
     this.date = new Date(this.discussion.startDate).toLocaleDateString()
-    console.log("discussion: " + this.discussion._id)
   }
 
 }

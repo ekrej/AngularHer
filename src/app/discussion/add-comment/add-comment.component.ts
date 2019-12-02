@@ -39,7 +39,6 @@ export class AddCommentComponent implements OnInit {
     if (this.onDiscussion == true) {
       this.commentService.addCommentOnDiscussion(user, this.content.value, this.id)
     } else if (this.onComment == true) {
-      console.log(this.discussion)
       this.commentService.addCommentOnComment(user, this.content.value, this.id, this.discussion)
     }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Comment } from '../../../models/comment.model';
+import { AuthService } from 'src/services/auth.service';
+import { CommentService } from 'src/services/comment.service';
 @Component({
   selector: 'app-comment-on-comment-card',
   templateUrl: './comment-on-comment-card.component.html',
@@ -13,12 +15,10 @@ export class CommentOnCommentCardComponent implements OnInit {
   downvotes: number;
   edit: boolean;
   @Input() depth: number
-  constructor() { }
+  constructor(private authService: AuthService, private commentService: CommentService) { }
 
   ngOnInit() {
     this.depth += 1;
-    console.log(this.depth)
-    console.log(this.comment)
     if(this.comment.upvotesArray){
       this.upvotes = this.comment.upvotesArray.length
     }else {
@@ -40,5 +40,13 @@ export class CommentOnCommentCardComponent implements OnInit {
 
   setEdit(){
     this.edit = !this.edit
+  }
+
+  upvote(){
+    this.commentService.upvote(this.comment._id, this.authService.getUser(), this.discussionId)
+  }
+
+  downvote(){
+    this.commentService.downvote(this.comment._id, this.authService.getUser(), this.discussionId)
   }
 }

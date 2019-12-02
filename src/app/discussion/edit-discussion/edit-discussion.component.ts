@@ -44,7 +44,6 @@ export class EditDiscussionComponent implements OnInit {
   }
 
   getDiscussion(){
-    console.log("id "+this.id)
     this.discussionService.getDiscussionbyId(this.id)
     .subscribe(
       discussion => {
@@ -55,7 +54,6 @@ export class EditDiscussionComponent implements OnInit {
   }
 
   getGames(){
-    console.log("discussion: "+this.discussion.name)
     this.gameService.getGames()
       .subscribe(
         games => {
@@ -67,7 +65,6 @@ export class EditDiscussionComponent implements OnInit {
               return -1;
             }
           });
-          console.log(this.games)
           this.fillForm();
         },
         error => console.log(error)
@@ -75,7 +72,6 @@ export class EditDiscussionComponent implements OnInit {
   }
 
   fillForm(){
-    console.log(this.discussion.gameId)
     this.discussionForm.controls['gameId'].setValue(this.games.find(x => x._id == this.discussion.gameId)._id, {onlySelf: true});
   }
 
@@ -93,7 +89,6 @@ export class EditDiscussionComponent implements OnInit {
 
   onSubmit() {
     let discussion: Discussion = this.discussionForm.value;
-    console.log(discussion);
     this.discussionService.updateDiscussion(this.name.value, this.content.value, this.gameId.value, this.id);
      
   }
