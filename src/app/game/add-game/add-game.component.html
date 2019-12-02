@@ -27,7 +27,7 @@
                 category</button>
             <div class="form-input">
                 <div style='margin-bottom: 20px;' formArrayName="categories"
-                    *ngFor="let category of gameForm.get('categories').controls; let i = index">
+                    *ngFor="let category of gameForm.get('categories')['controls']; let i = index">
                     <input placeholder="Category" [formControlName]="i">
                 </div>
             </div>
