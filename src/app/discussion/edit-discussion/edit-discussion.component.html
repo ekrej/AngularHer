@@ -48,6 +48,7 @@
     </div>
 
     <div>
+            <button routerLink="/discussion/{{id}}" class='btn btn-primary addbtn cancelbtn'>cancel</button>
         <button class="btn btn-primary roundBtn" type="submit" [disabled]="!discussionForm.valid">add discussion</button>
     </div>
 </form>

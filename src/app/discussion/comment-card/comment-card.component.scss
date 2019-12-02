@@ -23,7 +23,6 @@
 }
 
 .clickable-box{
-    cursor: pointer;
 }
 
 .wrap-text{
@@ -38,3 +37,30 @@
 .clearfix {
     overflow:hidden
   }
+
+.editLink{
+    float: right; 
+    color: $button-collor !important;
+    cursor: pointer;
+}
+
+.addbtn {
+    //float: right;
+    background-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    box-shadow: $border;
+    margin-bottom: 15px;
+}
+
+.cancelbtn {
+    background-color: $button-delete-background-color;
+    border-color: $button-delete-background-color;
+    color: $button-background-color;
+    border-radius: 15px;
+    margin-right: 20%;
+    margin-left: 35%;
+    margin-top: -10%;
+    margin-bottom: 15px;
+    box-shadow: $border;
+}

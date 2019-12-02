@@ -27,4 +27,13 @@
         color: $button-background-color;
         box-shadow: $border;
     }
+    .cancelbtn {
+        background-color: $button-delete-background-color;
+        border-color: $button-delete-background-color;
+        color: $button-background-color;
+        border-radius: 15px;
+        margin-left: 10px;
+        margin-bottom: 15px;
+        box-shadow: $border;
+    }
 }

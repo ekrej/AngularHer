@@ -1,24 +1,35 @@
-<div class=" clickable-box clearfix">
-<mat-card *ngIf="comment" class="comment-card clickable-box clearfix" >
-<mat-card-content>
-        <div class="d-flex">
-            <p class="content-card wrap-text">{{comment.content}} </p>
-        </div>
+<div class=" clickable-box clearfix" >
+  <mat-card *ngIf="!edit" class="comment-card clickable-box clearfix">
+    <mat-card-content>
+      <div>
+        <a (click)="setEdit()" class='editLink'>edit</a>
+      </div>
+      <div class="d-flex">
+        <p class="content-card wrap-text">{{comment.content}} </p>
+      </div>
 
-        <small class="content-card" style="float: right;right: 0px" > {{upvotes}}</small>
-        <small class="content-card"style="float: right;right: 0px"> {{downvotes}}</small>
-        <div class="d-flex">
-            <small class="content-card wrap-text">{{comment.user}} </small>
-        </div>  
+      <small class="content-card" style="float: right;right: 0px"> {{upvotes}}</small>
+      <small class="content-card" style="float: right;right: 0px"> {{downvotes}}</small>
+      <div class="d-flex">
+        <small class="content-card wrap-text">{{comment.user}} </small>
+      </div>
 
-        </mat-card-content>
+    </mat-card-content>
 
 
-</mat-card>
-            <div >
-            <app-add-comment [id]="comment._id" [onComment]="true" [discussion]="discussionId" ></app-add-comment>
-          </div></div>
+  </mat-card>
 
-          <div *ngIf="comments" >
-            <app-comment-on-comment-card class="" *ngFor="let comment of comments;" [comment]="comment" [discussionId]="discussionId" [depth]="depth"></app-comment-on-comment-card>
-          </div>
+  <div *ngIf="edit">
+    <app-edit-comment [id]="comment._id" [oldContent]="comment.content" [discussion]="discussionId"></app-edit-comment>
+    <button (click)="setEdit()" class='btn btn-primary addbtn cancelbtn'>cancel</button>
+  </div>
+  <div>
+    <app-add-comment [id]="comment._id" [onComment]="true" [discussion]="discussionId"></app-add-comment>
+  </div>
+
+</div>
+
+<div *ngIf="comments">
+  <app-comment-on-comment-card class="" *ngFor="let comment of comments;" [comment]="comment"
+    [discussionId]="discussionId" [depth]="depth"></app-comment-on-comment-card>
+</div>

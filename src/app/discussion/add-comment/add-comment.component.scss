@@ -31,6 +31,7 @@
 .addbtn {
     //float: right;
     background-color: $button-collor;
+    border-color: $button-collor;
     color: $button-background-color;
     border-radius: 15px;
     box-shadow: $border;
@@ -49,6 +50,7 @@
 .leavebtncomment {
     float: right;
     background-color: $button-collor;
+    border-color: $button-collor;
     color: $button-background-color;
     border-radius: 15px;
     margin-right: 20%;
