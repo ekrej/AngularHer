@@ -18,8 +18,20 @@ export class DiscussionService{
             content, 
             gameId, 
             username,
-        })        .subscribe((response) => {
+        })        
+        .subscribe((response) => {
             this.router.navigate(['/discussion']);
+        });
+    }
+
+    updateDiscussion(name: string, content: string, gameId: string, id:string){
+        return this.http.put<any>(`https://angularherapi.herokuapp.com/api/discussion/${id}`, {
+            name,
+            content,
+            gameId,
+        })
+        .subscribe((response) => {
+            this.router.navigate([`/discussion/${id}`]);
         });
     }
 

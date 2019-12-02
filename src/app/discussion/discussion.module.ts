@@ -13,6 +13,8 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
 import { CommentService } from 'src/services/comment.service';
 import { DiscussionService } from 'src/services/discussion.service';
 import { CommentOnCommentCardComponent } from './comment-on-comment-card/comment-on-comment-card.component';
+import { EditDiscussionComponent } from './edit-discussion/edit-discussion.component';
+import { EditCommentComponent } from './edit-comment/edit-comment.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CommentOnCommentCardComponent } from './comment-on-comment-card/comment
     DiscussionCardComponent,
     CommentCardComponent,
     AddCommentComponent,
-    CommentOnCommentCardComponent
+    CommentOnCommentCardComponent,
+    EditDiscussionComponent,
+    EditCommentComponent
   ],
   imports: [
     CommonModule,

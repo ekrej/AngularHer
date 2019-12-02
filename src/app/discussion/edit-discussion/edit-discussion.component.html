@@ -1,0 +1,53 @@
+<form [formGroup]="discussionForm" (ngSubmit)="onSubmit()" class="discussionForm">
+    <div class="form-group">
+        <div class="form-row">
+
+            <div class="form-input">
+                <input type="text" class="form-control" id="name" placeholder="name of the discussion"
+                    formControlName="name"
+                    [ngClass]="!name.untouched && name.hasError('required') ? 'field-error' : ''"
+                    [value]="discussion.name">
+                <label for="name">name</label>
+            </div>
+            <div class="error-message" *ngIf="!name.untouched && name.hasError('required')">
+                A name is required.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+
+            <div class="form-input">
+                <select class="form-control" id="gameId" formControlName="gameId"placeholder="game of the discussion"
+                    [ngClass]="!gameId.untouched && gameId.hasError('required') ? 'field-error' : ''">
+                    <option *ngFor="let game of games" [value]="game._id" (change)="selected()">{{game.name}}</option>
+                </select>
+                <label for="content">game for the discussion</label>
+            </div>
+  
+            <div class="error-message" *ngIf="!gameId.untouched && gameId.hasError('required')">
+                A game is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+
+            <div class="form-input">
+                <textarea class="form-control" rows="10" id="content" placeholder="description of the discussion"
+                    formControlName="content"
+                    [ngClass]="!content.untouched && content.hasError('required') ? 'field-error' : ''"
+                    [value]="discussion.content"></textarea>
+                <label for="content">content of the discussion</label>
+            </div>
+            <div class="error-message" *ngIf="!content.untouched && content.hasError('required')">
+                A desciption is required.
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn btn-primary roundBtn" type="submit" [disabled]="!discussionForm.valid">add discussion</button>
+    </div>
+</form>
