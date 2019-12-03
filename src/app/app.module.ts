@@ -23,6 +23,8 @@ import { HttpInterceptor } from './shared/http.interceptor';
 import { SigninComponent } from './signin/signin.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailComponent } from './user/detail/detail.component';
+import { EditComponent } from './user/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent, 
     SigninComponent, 
     RegisterComponent, 
-    NotFoundComponent
+    NotFoundComponent, DetailComponent, EditComponent
   ],
   imports: [
     BrowserModule, 

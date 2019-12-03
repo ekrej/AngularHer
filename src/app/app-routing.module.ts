@@ -10,14 +10,14 @@ import { RegisterComponent } from "./register/register.component";
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'discussion', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'about', component: UsecasesComponent },
   { path: 'discussion', loadChildren:() => DiscussionModule },
   { path: 'game', loadChildren:() => GameModule },
   { path: 'login', component: SigninComponent },
   { path: 'register', component: RegisterComponent},
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'discussion' }
 ]
 
 
