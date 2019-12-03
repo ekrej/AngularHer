@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { MatCardModule } from '@angular/material';
-import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule, MatDialogModule, MatSnackBarModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './core/app/app.component'
@@ -22,6 +22,7 @@ import { AuthGuard } from '../services/auth-guard.service';
 import { HttpInterceptor } from './shared/http.interceptor';
 import { SigninComponent } from './signin/signin.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,10 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
     DiscussionModule, 
     GameModule, 
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [AuthService, AuthGuard, 
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true }],

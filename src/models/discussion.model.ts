@@ -7,7 +7,7 @@ export class Discussion {
     startDate: Date
     user: String
     gameId: String
-    upvotesArray: []
-    downvotesArray: []
+    upvotes: number
+    downvotes: number
     comments: []
 }

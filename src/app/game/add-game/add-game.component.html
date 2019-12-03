@@ -45,8 +45,9 @@
         </div>
 
         <div>
-                <button routerLink="/game" class='btn btn-primary addbtn cancelbtn'>cancel</button>
-            <button class="btn btn-primary roundBtn" type="submit" [disabled]="!gameForm.valid">add game</button>
+            <button class="btn btn-primary roundBtn" type="submit" [disabled]="!gameForm.valid"><i class="far fa-save"></i> add game</button>
+            <button routerLink="/game" class='btn btn-primary addbtn cancelbtn'><i class="far fa-window-close"></i> cancel</button>
+            
         </div>
     </div>
 </form>

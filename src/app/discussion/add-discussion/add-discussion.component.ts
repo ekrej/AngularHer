@@ -50,7 +50,6 @@ export class AddDiscussionComponent implements OnInit {
     this.gameService.getSingleGame(this.id)
       .subscribe(
         game => {
-          console.log(game)
           this.games = [game];
           this.discussionForm.controls['gameId'].setValue(this.games[0]._id, {onlySelf: true});
         },

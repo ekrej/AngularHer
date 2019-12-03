@@ -33,3 +33,25 @@ $colors: (
 .api-error{
     color: red;
 }
+
+.upvote{
+    color: $upvote-color;
+    margin-top: 5px;
+    margin-right: 5px; 
+    border-radius: 80%;
+}
+.downvote{
+    color: $button-delete-background-color;
+    margin-top: 5px;
+    margin-right: 5px; 
+    border-radius: 54%;
+}
+
+.counter{
+    margin-bottom:15px;
+    margin-left: -12px;
+}
+
+.clickable-box{
+    cursor: pointer;
+}

@@ -17,12 +17,6 @@
     }
 }
 
-
-
-
-
-
-
 .content-card {
     margin-left: 14px;
     margin-right: 14px;
@@ -44,7 +38,18 @@
     background-color: $button-collor;
     color: $button-background-color;
     border-radius: 15px;
+    //box-shadow: $border;
+}
+
+.leaveComment
+{
+    float: right;
+    background-color: $button-collor;
+    border-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
     box-shadow: $border;
+    margin-right: 0%;
 }
 
 .leavebtncomment {

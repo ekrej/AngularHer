@@ -14,7 +14,6 @@ export class GameCardComponent implements OnInit {
 
   ngOnInit() {
     this.date = new Date(this.game.releaseDate).toLocaleDateString()
-    console.log(this.game._id)
   }
 
 }
