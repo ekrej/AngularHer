@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef  } from '@angular/core';
 import { Discussion } from 'src/models/discussion.model';
 import { Game } from 'src/models/game.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -17,7 +17,7 @@ export class EditDiscussionComponent implements OnInit {
   id: string;
   games: Game[];
   discussionForm: FormGroup
-  constructor(private route: ActivatedRoute, private gameService: GameService, private discussionService: DiscussionService) { }
+  constructor(private route: ActivatedRoute, private gameService: GameService, private discussionService: DiscussionService, ) { }
 
   ngOnInit() {
 
@@ -92,5 +92,6 @@ export class EditDiscussionComponent implements OnInit {
     this.discussionService.updateDiscussion(this.name.value, this.content.value, this.gameId.value, this.id);
      
   }
+
 
 }

@@ -1,6 +1,7 @@
 <mat-card class="game-card col-lg-12 child-component" *ngIf="discussion">
   <button type="button" *ngIf="isUser" [disabled]="!isUser" class="btn btn-primary addbtn"
-    routerLink="/discussion/edit/{{id}}">edit Discussion</button>
+    routerLink="/discussion/edit/{{id}}"><i class="far fa-edit"></i>edit Discussion</button><br/><br/>
+    <button type="button" *ngIf="isUser" mat-button (click)="deleteWarning(deleteDialog)" class="btn btn-primary cancelbtn"><i class="far fa-trash-alt"></i> Delete</button>
   <div class="col-lg-4" style="float: right;">
     <small class="list-item">start date: {{date}}</small>
   </div>
@@ -31,12 +32,22 @@
 
     </a>
   </mat-card-content>
-</mat-card>
-<div style="margin-top: -45px;">
-  <app-add-comment [id]="id" [onDiscussion]="true"></app-add-comment>
+
+<div style="margin-top: -45px; ">
+  <app-add-comment [id]="id" [onDiscussion]="true" ></app-add-comment>
 </div>
 
 <div *ngIf="comments">
   <app-comment-card class="" *ngFor="let comment of comments;" [comment]="comment" [discussionId]="discussion._id">
   </app-comment-card>
 </div>
+
+<ng-template #deleteDialog >
+    <div class="dialog-box clearfix">
+    <h2 matDialogTitle>Warning</h2>
+    <p matDialogContent><em>You are about to delete this discussion. Is this really what you want?</em><br/>
+      <em><button class="btn btn-primary addbtn" (click)="deleteForReal()" style="margin-top: 15px;"><i class="far fa-check-circle"></i> yes</button>
+        <button type="button" class="btn btn-primary cancelbtn" (click)="cancel()" style="margin-top: 15px;"><i class="far fa-window-close"></i> no</button></em></p>
+  </div>
+  </ng-template>
+</mat-card>

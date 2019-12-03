@@ -48,7 +48,11 @@
     </div>
 
     <div>
-            <button routerLink="/discussion/{{id}}" class='btn btn-primary addbtn cancelbtn'>cancel</button>
-        <button class="btn btn-primary roundBtn" type="submit" [disabled]="!discussionForm.valid">add discussion</button>
+        <button class="btn btn-primary roundBtn" type="submit" [disabled]="!discussionForm.valid"><i class="far fa-save"></i> edit discussion</button>
+        <button routerLink="/discussion/{{id}}" class='btn btn-primary addbtn cancelbtn'><i class="far fa-window-close"></i> cancel</button>
+        
     </div>
-</form>
+<ng-template #firstDialog>
+    <h2 matDialogTitle>Hello, world!</h2>
+    <p matDialogContent><em>Content for this dialog goes here...</em></p>
+</ng-template>

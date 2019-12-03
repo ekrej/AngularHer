@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { Comment } from '../../../models/comment.model';
 import { AuthService } from 'src/services/auth.service';
 import { CommentService } from 'src/services/comment.service';
+import { MatDialog, MatSnackBar } from '@angular/material';
 @Component({
   selector: 'app-comment-card',
   templateUrl: './comment-card.component.html',
@@ -15,9 +16,12 @@ export class CommentCardComponent implements OnInit {
   downvotes: number;
   depth: number;
   edit: boolean;
-  constructor(private authService: AuthService, private commentService: CommentService) { }
+  isUser: Boolean;
+  user: string;
+  constructor(private authService: AuthService, private commentService: CommentService,  private dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.user = this.authService.getUser();
     this.edit = false;
     this.depth = 0;
     if(this.comment.upvotesArray){
@@ -37,6 +41,7 @@ export class CommentCardComponent implements OnInit {
     if(this.comment.comments){
       this.comments = this.comment.comments
     }
+    this.setUser()
   }
 
   setEdit(){
@@ -49,6 +54,29 @@ export class CommentCardComponent implements OnInit {
 
   downvote(){
     this.commentService.downvote(this.comment._id, this.authService.getUser(), this.discussionId)
+  }
+
+  deleteWarning(ref: TemplateRef<any>){
+    this.dialog.open(ref);
+  }
+
+  deleteForReal(){
+    this.commentService.deleteComment(this.comment._id, this.discussionId);
+    this.dialog.closeAll();
+    this._snackBar.open("comment is deleted",null,{
+      duration: 5000,
+      panelClass: ['delete-snackbar']
+    });
+  }
+
+  cancel(){
+    this.dialog.closeAll();
+  }
+
+  setUser() {
+    if (this.user == this.comment.user) {
+      this.isUser = true;
+    }
   }
 
 }

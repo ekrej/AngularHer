@@ -8,8 +8,7 @@
                 [ngClass]="!content.untouched && content.hasError('required') ? 'field-error' : ''"
                 [value]="oldContent"></textarea>
             <div>
-                <button class="btn btn-primary addbtn" type="submit" [disabled]="!commentForm.valid">add
-                    a comment</button>
+                <button class="btn btn-primary addbtn" type="submit" [disabled]="!commentForm.valid"><i class="far fa-save"></i> edit comment</button>
             </div>
         </div>
     </div>

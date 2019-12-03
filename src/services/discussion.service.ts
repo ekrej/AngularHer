@@ -62,7 +62,17 @@ export class DiscussionService{
         this.http.post<any>(`https://angularherapi.herokuapp.com/api/discussion/${id}/downvote`, {
             username
         }).subscribe((response) => {
-            this.router.navigate([`/discussion/${id}`]);
+            console.log(response)
+            this.router.navigateByUrl('/discussion', { skipLocationChange: true }).then(() => {
+                this.router.navigate([`/discussion/${id}`]);
+            });
+        });
+    }
+
+    deleteDiscussion(id:string){
+        this.http.delete<any>(`https://angularherapi.herokuapp.com/api/discussion/${id}`)
+        .subscribe((response) => {
+            this.router.navigate([`/discussion`]);
         });
     }
 }

@@ -67,7 +67,17 @@ export class CommentService {
             this.router.navigateByUrl('/discussion', { skipLocationChange: true }).then(() => {
                 this.router.navigate([`/discussion/${discussion}`]);
             });
-        })
+        });
+    }
+
+    deleteComment(id: string, discussion: string){
+        this.http.delete<any>(`https://angularherapi.herokuapp.com/api/comment/${id}`, {
+
+        }).subscribe((response) => {
+            this.router.navigateByUrl('/discussion', { skipLocationChange: true }).then(() => {
+                this.router.navigate([`/discussion/${discussion}`]);
+            });
+        });
     }
 
 }
