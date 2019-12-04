@@ -1,6 +1,10 @@
-<button class="btn btn-primary addbtn" routerLink="/discussion/add">start a Discussion</button> 
+<button class="btn btn-primary addbtn" routerLink="/discussion/add"><i class="fas fa-plus"></i> start a Discussion</button> 
 <h1 id="title-text">Discussions</h1>
 
+<div class="search-discussion">
+    <input class="form-control search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="search for a discussion">
+  </div>
+
 <div *ngIf="discussions" >
-    <app-discussion-card class="" *ngFor="let discussion of discussions;" [discussion]="discussion"></app-discussion-card>
+    <app-discussion-card class="" *ngFor="let discussion of discussions  | filter:searchText" [discussion]="discussion"></app-discussion-card>
 </div>

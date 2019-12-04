@@ -9,7 +9,7 @@ import { Game } from 'src/models/game.model';
 })
 export class GameListComponent implements OnInit {
   games: Game[];
-
+  searchText;
   constructor(private gameService: GameService) { }
 
   ngOnInit() {

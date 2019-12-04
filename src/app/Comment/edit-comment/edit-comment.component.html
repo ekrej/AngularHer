@@ -1,0 +1,15 @@
+
+<form [formGroup]="commentForm" (ngSubmit)="onSubmit()" class="commentForm">
+    <div class="comment-card clickable-box ">
+
+        <div class="form-input inputfield">
+            <textarea class="form-control" rows="5" cols="4" id="content" placeholder="write a comment"
+                formControlName="content"
+                [ngClass]="!content.untouched && content.hasError('required') ? 'field-error' : ''"
+                [value]="oldContent"></textarea>
+            <div>
+                <button class="btn btn-primary addbtn" type="submit" [disabled]="!commentForm.valid"><i class="far fa-save"></i> edit comment</button>
+            </div>
+        </div>
+    </div>
+</form>

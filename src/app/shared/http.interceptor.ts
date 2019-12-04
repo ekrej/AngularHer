@@ -11,7 +11,6 @@ export class HttpInterceptor implements HttpInterceptor {
     ) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log(req);
         if (this.authService.isAuthenticated()) {
             const copiedReq = req.clone({
                 headers: req.headers.set('X-Access-Token', this.authService.getToken().toString())

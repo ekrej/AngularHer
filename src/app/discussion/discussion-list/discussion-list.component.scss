@@ -8,7 +8,19 @@
 .addbtn {
     float: right;
     background-color: $button-collor;
+    border-color: $button-collor;
     color: $button-background-color;
     border-radius: 15px;
     box-shadow: $border;
 }
+
+.search-discussion {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin:auto;
+  }
+
+  .search::before  {
+    font-family: "Font Awesome 5 Free";
+    content: "\f002"
+  }

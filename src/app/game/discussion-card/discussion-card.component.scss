@@ -5,10 +5,11 @@
     background-color: $button-background-color;
     margin: auto;
     margin-bottom: 16px;
-    max-width: 40%;
+    min-height: 70%;
+    max-width: 60%;
     box-shadow: $border;
     @include md {
-        max-width: 40%;
+        max-width: 70%;
     }
 
     @include sm {
@@ -23,6 +24,10 @@
 
 .clickable-box{
     cursor: pointer;
+}
+
+.wrap-text{
+    overflow-wrap: break-word !important;
 }
 
 .na-text {

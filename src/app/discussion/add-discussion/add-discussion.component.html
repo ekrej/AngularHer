@@ -46,6 +46,7 @@
     </div>
 
     <div>
-        <button class="btn btn-primary roundBtn" type="submit" [disabled]="!discussionForm.valid">add discussion</button>
+        <button class="btn btn-primary roundBtn" type="submit" [disabled]="!discussionForm.valid"><i class="far fa-save"></i> add discussion</button>
+        <button routerLink="/discussion" class='btn btn-primary addbtn cancelbtn'><i class="far fa-window-close"></i> cancel</button>
     </div>
 </form>

@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DiscussionService } from 'src/services/discussion.service';
 import { filter, tap } from 'rxjs/operators';
 import { Discussion } from 'src/models/discussion.model';
 import { Comment } from '../../../models/comment.model'
 import { AuthService } from 'src/services/auth.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-discussion-detail',
@@ -12,16 +14,16 @@ import { AuthService } from 'src/services/auth.service';
   styleUrls: ['./discussion-detail.component.scss']
 })
 export class DiscussionDetailComponent implements OnInit {
- 
-  constructor(private route: ActivatedRoute, private discussionService: DiscussionService, private authService: AuthService) { }
+
+  constructor(private route: ActivatedRoute, private discussionService: DiscussionService, private authService: AuthService, private dialog: MatDialog, private _snackBar: MatSnackBar) { }
   id: string;
   discussion: Discussion;
   comments: Comment[];
   date: String;
-  upvotes: number;
-  downvotes: number;
   user: string;
   isUser: Boolean
+  upvotes: number;
+  downvotes: number;
 
   ngOnInit() {
     this.user = this.authService.getUser();
@@ -29,46 +31,59 @@ export class DiscussionDetailComponent implements OnInit {
       filter(params => params['id']),
       filter(params => !!params),
       tap(param => this.id = param.id))
-        .subscribe(
-          res => this.getDiscussionInfo()
-        )
-        
+      .subscribe(
+        res => this.getDiscussionInfo()
+      )
+
   }
 
-  getDiscussionInfo(){
+  getDiscussionInfo() {
     this.discussionService.getDiscussionbyId(this.id)
-    .subscribe(
-      discussion => {
-        console.log(discussion)
-        this.discussion = discussion;
-        this.date = new Date(discussion.startDate).toLocaleDateString();
-        if(this.discussion.upvotesArray){
-          this.upvotes = this.discussion.upvotesArray.length
-        }else {
-          this.upvotes = 0;
+      .subscribe(
+        discussion => {
+          console.log(discussion)
+          this.discussion = discussion;
+          this.date = new Date(discussion.startDate).toLocaleDateString();
+          this.downvotes = discussion.downvotes;
+          this.upvotes = discussion.upvotes;
+          this.getComments();
         }
-        if(this.discussion.downvotesArray){
-          this.downvotes = this.discussion.downvotesArray.length
-        }else {
-          this.downvotes = 0;
-        }
-        this.getComments();
-      }
-    )
+      )
   }
 
-  getComments(){
-    if(this.discussion.comments){
+  getComments() {
+    if (this.discussion.comments) {
       this.comments = this.discussion.comments
     }
     this.setUser()
   }
 
-  setUser(){
-    if(this.user == this.discussion.user){
+  setUser() {
+    if (this.user == this.discussion.user) {
       this.isUser = true;
     }
   }
 
+  upvote(){
+    this.discussionService.upvote(this.id, this.user)
+  }
+
+  downvote(){
+    this.discussionService.downvote(this.id, this.user)
+    this.discussion.downvotes =  this.downvotes + 1;
+  }
+
+  deleteWarning(ref: TemplateRef<any>){
+    this.dialog.open(ref);
+  }
+
+  deleteForReal(){
+    this.discussionService.deleteDiscussion(this.id);
+    this.dialog.closeAll();
+  }
+
+  cancel(){
+    this.dialog.closeAll();
+  }
 
 }

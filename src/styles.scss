@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import './assets/variables';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 $medium: 1160px;
@@ -33,3 +33,54 @@ $colors: (
 .api-error{
     color: red;
 }
+
+.upvote{
+    color: $upvote-color;
+    margin-top: 5px;
+    margin-right: 5px; 
+    border-radius: 80%;
+}
+.downvote{
+    color: $button-delete-background-color;
+    margin-top: 5px;
+    margin-right: 5px; 
+    border-radius: 54%;
+}
+
+.counter{
+    margin-bottom:15px;
+    margin-left: -12px;
+}
+
+.clickable-box{
+    cursor: pointer;
+}
+
+::ng-deep .delete-snackbar{
+    text-align: center;
+    background: $button-collor;
+}
+::ng-deep .delete-snackbar .mat-simple-snackbar-action { color: $button-collor; }
+
+::ng-deep .upvote-snackbar{
+    text-align: center;
+    background: $upvote-color;
+}
+::ng-deep .upvote-snackbar .mat-simple-snackbar-action { color: $upvote-color; }
+
+::ng-deep .downvote-snackbar{
+    text-align: center;
+    background: $button-delete-background-color;
+}
+
+::ng-deep .downvote-snackbar .mat-simple-snackbar-action { color: $button-delete-background-color; }
+
+.search{
+    box-shadow: 10px 10px 5px 0px rgba(50, 50, 50, 0.75); 
+    font-family:'FontAwesome', Arial;
+}
+.search::before  {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f002"
+  }

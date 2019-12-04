@@ -6,8 +6,8 @@ import { UseCase } from '../../usecase.model'
   template: `
     <table class="table table-sm table-bordered">
       <tbody>
-        <tr class="table-primary">
-          <th scope="row" style="width: 16.66%">Naam</th>
+        <tr class="table-primary" style="background-color:rgb(64, 137, 185);">
+          <th scope="row" style="width: 16.66%" >Naam</th>
           <td>
             <strong>{{ useCase.id }} {{ useCase.name }}</strong>
           </td>

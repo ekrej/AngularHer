@@ -1,0 +1,105 @@
+@import '../../../assets/variables';
+@import '../../../styles.scss';
+
+.comment-card {
+    background-color: $button-background-color;
+    margin: auto;
+    margin-bottom: 16px;
+    min-height: 70%;
+    max-width: 60%;
+    box-shadow: 10px 10px 5px 0px rgba(50, 50, 50, 0.75);
+    @include md {
+        max-width: 70%;
+    }
+
+    @include sm {
+        max-width: 90%
+    }
+}
+
+.content-card {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+
+.wrap-text{
+    overflow-wrap: break-word !important;
+}
+
+.na-text {
+    padding-top: 5px;
+    font-size: 26px !important;
+}
+
+.clearfix {
+    overflow:hidden
+  }
+
+.editLink{
+    float: right; 
+    color: $button-collor !important;
+    cursor: pointer;
+}
+
+.addbtn {
+    //float: right;
+    background-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    box-shadow: $border;
+    margin-bottom: 15px;
+}
+
+.cancelbtn {
+    background-color: $button-delete-background-color;
+    border-color: $button-delete-background-color;
+    color: $button-background-color;
+    border-radius: 15px;
+    margin-right: 5px;
+    float: right;
+    box-shadow: $border;
+}
+
+.borderLine{
+    border-top: 1px solid #6e7295
+}
+
+.dialog-box {
+    background-color: $button-background-color;
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    min-height: 60%;
+    max-width: 60%;
+    box-shadow: $border;
+    padding: 15px;
+}
+
+::ng-deep .delete-snackbar{
+    text-align: center;
+    background: $button-collor;
+}
+
+.deleteLink{
+    float: right; 
+    color: $button-delete-background-color !important;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.conf-btn {
+    float: right;
+    background-color: $button-collor;
+    border-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    margin-left: 15px;
+    box-shadow: $border;
+}
+
+.clearfix::after {
+    clear: both;
+    display: block;
+    margin-bottom: 15px;
+  }

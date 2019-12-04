@@ -1,0 +1,124 @@
+@import '../../../assets/variables';
+@import '../../../styles.scss';
+
+.comment-card {
+    margin: auto;
+    margin-bottom: 16px;
+    min-height: 70%;
+
+    box-shadow: $border;
+    @include md {
+        max-width: 60%;
+    }
+
+    @include sm {
+        max-width: 80%
+    }
+}
+
+.background1{
+    background-color: $button-background-color;
+    max-width: 50%;
+    margin-left: 30%;
+}
+.background2{
+    background-color: #c4c4c4;
+    max-width: 45%;
+    margin-left: 35%;
+}
+.background3{
+    background-color: #aeaeae;
+    max-width: 40%;
+    margin-left: 40%;
+}
+.background4{
+    background-color: #989898;
+    max-width: 35%;
+    margin-left: 45%;
+}
+.background5{
+    background-color: #828282;
+    max-width: 35%;
+    margin-left: 45%;
+}
+
+.content-card {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+
+.wrap-text{
+    overflow-wrap: break-word !important;
+}
+
+.na-text {
+    padding-top: 5px;
+    font-size: 26px !important;
+}
+
+.clearfix {
+    overflow:hidden
+  }
+
+  .editLink{
+    float: right; 
+    color: $button-collor !important;
+    cursor: pointer;
+}
+
+.addbtn {
+    //float: right;
+    background-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    box-shadow: $border;
+    margin-bottom: 15px;
+}
+
+.cancelbtn {
+    background-color: $button-delete-background-color;
+    border-color: $button-delete-background-color;
+    color: $button-background-color;
+    border-radius: 15px;
+    margin-right: 5px;
+    float: right;
+    box-shadow: $border;
+}
+.conf-btn {
+    float: right;
+    background-color: $button-collor;
+    border-color: $button-collor;
+    color: $button-background-color;
+    border-radius: 15px;
+    margin-left: 15px;
+    box-shadow: $border;
+}
+
+.dialog-box {
+    background-color: $button-background-color;
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    min-height: 80%;
+    max-width: 60%;
+    box-shadow: $border;
+    padding: 15px;
+}
+
+::ng-deep .delete-snackbar{
+    text-align: center;
+    background: $button-collor;
+}
+
+.deleteLink{
+    float: right; 
+    color: $button-delete-background-color !important;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.clearfix::after {
+    clear: both;
+    display: block;
+    margin-bottom: 15px;
+  }

@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DiscussionListComponent } from "./discussion-list/discussion-list.component";
 import { DiscussionDetailComponent } from "./discussion-detail/discussion-detail.component";
 import { AddDiscussionComponent } from "./add-discussion/add-discussion.component";
+import { EditDiscussionComponent } from './edit-discussion/edit-discussion.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'add', component: AddDiscussionComponent},
   { path: 'add/:id', component: AddDiscussionComponent},
   { path: ':id', component: DiscussionDetailComponent},
+  { path: 'edit/:id', component: EditDiscussionComponent},
 ]
 
 

@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { MatCardModule } from '@angular/material';
-import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule, MatDialogModule, MatSnackBarModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './core/app/app.component'
@@ -22,6 +22,12 @@ import { AuthGuard } from '../services/auth-guard.service';
 import { HttpInterceptor } from './shared/http.interceptor';
 import { SigninComponent } from './signin/signin.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailComponent } from './user/detail/detail.component';
+import { EditComponent } from './user/edit/edit.component';
+import { MyDiscussionCardComponent } from './user/my-discussion-card/my-discussion-card.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +38,10 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
     DashboardComponent, 
     SigninComponent, 
     RegisterComponent, 
-    NotFoundComponent
+    NotFoundComponent,
+    DetailComponent, 
+    EditComponent, 
+    MyDiscussionCardComponent
   ],
   imports: [
     BrowserModule, 
@@ -44,9 +53,13 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
     DiscussionModule, 
     GameModule, 
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    Ng2SearchPipeModule
   ],
-  providers: [AuthService, AuthGuard, 
+  providers: [AuthService, AuthGuard, Ng2SearchPipeModule,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

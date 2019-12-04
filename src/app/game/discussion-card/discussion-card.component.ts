@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Discussion } from 'src/models/discussion.model';
+import { DiscussionService } from 'src/services/discussion.service';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-game-discussion-card',
@@ -10,11 +12,19 @@ export class DiscussionCardComponent implements OnInit {
   @Input() discussion: Discussion;
   date: String
   
-  constructor() { }
+  constructor(private discussionService: DiscussionService, private authService: AuthService) { }
 
   ngOnInit() {
     this.date = new Date(this.discussion.startDate).toLocaleDateString()
-    console.log("discussion: " + this.discussion._id)
   }
+
+  upvote(){
+    this.discussionService.upvote(this.discussion._id, this.authService.getUser())
+  }
+
+  downvote(){
+    this.discussionService.downvote(this.discussion._id, this.authService.getUser())
+  }
+
 
 }

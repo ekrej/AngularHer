@@ -31,7 +31,7 @@ export class AddGameComponent implements OnInit {
   }
 
   get categories() {
-    return this.gameForm.controls.categories as FormArray;
+    return this.gameForm.get('categories') as FormArray;
   }
 
   get name() {

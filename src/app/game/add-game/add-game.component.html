@@ -27,7 +27,7 @@
                 category</button>
             <div class="form-input">
                 <div style='margin-bottom: 20px;' formArrayName="categories"
-                    *ngFor="let category of gameForm.get('categories').controls; let i = index">
+                    *ngFor="let category of gameForm.get('categories')['controls']; let i = index">
                     <input placeholder="Category" [formControlName]="i">
                 </div>
             </div>
@@ -45,7 +45,9 @@
         </div>
 
         <div>
-            <button class="btn btn-primary roundBtn" type="submit" [disabled]="!gameForm.valid">add game</button>
+            <button class="btn btn-primary roundBtn" type="submit" [disabled]="!gameForm.valid"><i class="far fa-save"></i> add game</button>
+            <button routerLink="/game" class='btn btn-primary addbtn cancelbtn'><i class="far fa-window-close"></i> cancel</button>
+            
         </div>
     </div>
 </form>
