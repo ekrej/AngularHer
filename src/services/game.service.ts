@@ -2,13 +2,15 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { Injectable } from "@angular/core";
 import { Game } from 'src/models/game.model';
+import { MatSnackBar } from '@angular/material';
 
 @Injectable()
 export class GameService{
 
     constructor(
         private http: HttpClient,
-        private router: Router
+        private router: Router,
+        private _snackBar: MatSnackBar
     ) { }
 
     addGame(name: String, releaseDate: Date, categorie: [String], developer: String){
@@ -19,6 +21,10 @@ export class GameService{
             developer
         })
         .subscribe((response) => {
+            this._snackBar.open("Game has been added",null,{
+                duration: 5000,
+                panelClass: ['delete-snackbar']
+              });
             this.router.navigate(['/game']);
         });
     }

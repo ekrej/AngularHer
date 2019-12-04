@@ -1,1 +1,51 @@
-<p>edit works!</p>
+<form [formGroup]="editForm" (ngSubmit)="onSubmitWarning(editDialog)" class="editForm">
+    <div class="form-group">
+            <div class="form-row">
+                <div class="form-input">
+                    <input 
+                        type="text"
+                        class="form-control"
+                        id="currentPassword"
+                        placeholder="current Password"
+                        formControlName="currentPassword"
+                        [ngClass]="!currentPassword.untouched && currentPassword.hasError('required') ? 'field-error' : ''">
+                    <label for="currentPassword">current password</label>
+                </div>
+                <div class="error-message" *ngIf="!currentPassword.untouched && currentPassword.hasError('required')">
+                    Username is required.
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-input">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="newPassword"
+                        placeholder="new Password" 
+                        type="newPassword"
+                        formControlName="newPassword"
+                        [ngClass]="!newPassword.untouched && newPassword.hasError('required') ? 'field-error' : ''">
+                    <label for="newPassword">Password</label>
+                </div>
+                <div class="error-message" *ngIf="!newPassword.untouched && newPassword.hasError('required')">
+                    Password is required.
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary roundBtn" type="submit" [disabled]="!editForm.valid"> <i class="far fa-save"></i> edit password</button>
+                <button routerLink="/" class='btn btn-primary addbtn cancelbtn'><i class="far fa-window-close"></i> cancel</button>
+            </div>
+        </div>
+</form>
+
+<ng-template #editDialog >
+    <div class="dialog-box clearfix">
+    <h2 matDialogTitle>Warning</h2>
+    <p matDialogContent><em>You are about to change tour password. Is this really what you want?</em><br/>
+      <em><button class="btn btn-primary addbtn" (click)="onSubmit()" style="margin-top: 15px;"><i class="far fa-check-circle"></i> yes</button>
+        <button type="button" class="btn btn-primary cancelbtn" (click)="cancel()" style="margin-top: 15px;"><i class="far fa-window-close"></i> no</button></em></p>
+
+  </div>
+  </ng-template>
+
+

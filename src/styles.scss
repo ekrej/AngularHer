@@ -55,3 +55,22 @@ $colors: (
 .clickable-box{
     cursor: pointer;
 }
+
+::ng-deep .delete-snackbar{
+    text-align: center;
+    background: $button-collor;
+}
+::ng-deep .delete-snackbar .mat-simple-snackbar-action { color: $button-collor; }
+
+::ng-deep .upvote-snackbar{
+    text-align: center;
+    background: $upvote-color;
+}
+::ng-deep .upvote-snackbar .mat-simple-snackbar-action { color: $upvote-color; }
+
+::ng-deep .downvote-snackbar{
+    text-align: center;
+    background: $button-delete-background-color;
+}
+
+::ng-deep .downvote-snackbar .mat-simple-snackbar-action { color: $button-delete-background-color; }

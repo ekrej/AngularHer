@@ -63,10 +63,7 @@ export class CommentCardComponent implements OnInit {
   deleteForReal(){
     this.commentService.deleteComment(this.comment._id, this.discussionId);
     this.dialog.closeAll();
-    this._snackBar.open("comment is deleted",null,{
-      duration: 5000,
-      panelClass: ['delete-snackbar']
-    });
+
   }
 
   cancel(){

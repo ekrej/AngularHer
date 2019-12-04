@@ -7,6 +7,8 @@ import { GameModule } from './game/game.module';
 import { DiscussionModule } from './discussion/discussion.module'
 import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from "./register/register.component";
+import { EditComponent } from './user/edit/edit.component';
+import { DetailComponent } from './user/detail/detail.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'game', loadChildren:() => GameModule },
   { path: 'login', component: SigninComponent },
   { path: 'register', component: RegisterComponent},
+  { path: 'user/edit', component: EditComponent},
+  { path: 'user/:user', component: DetailComponent},
   { path: '**', redirectTo: 'discussion' }
 ]
 
