@@ -1,0 +1,7 @@
+<h1 id="title-text">My discussions</h1>
+<div class="search-discussion">
+    <input class="form-control search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="search for a discussion">
+  </div>
+<div *ngIf="myDiscussions" >
+    <app-my-discussion-card class="" *ngFor="let discussion of myDiscussions | filter:searchText" [discussion]="discussion"></app-my-discussion-card>
+</div>

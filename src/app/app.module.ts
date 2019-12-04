@@ -23,6 +23,11 @@ import { HttpInterceptor } from './shared/http.interceptor';
 import { SigninComponent } from './signin/signin.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailComponent } from './user/detail/detail.component';
+import { EditComponent } from './user/edit/edit.component';
+import { MyDiscussionCardComponent } from './user/my-discussion-card/my-discussion-card.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +38,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent, 
     SigninComponent, 
     RegisterComponent, 
-    NotFoundComponent
+    NotFoundComponent,
+    DetailComponent, 
+    EditComponent, 
+    MyDiscussionCardComponent
   ],
   imports: [
     BrowserModule, 
@@ -48,9 +56,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    Ng2SearchPipeModule
   ],
-  providers: [AuthService, AuthGuard, 
+  providers: [AuthService, AuthGuard, Ng2SearchPipeModule,
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

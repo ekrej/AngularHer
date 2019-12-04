@@ -1,111 +1,87 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a
-        class="navbar-brand"
-        routerLink="/"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >{{ title }}</a
-      >
-      <button
-        class="navbar-toggler hidden-sm-up"
-        type="button"
-        (click)="isNavbarCollapsed = !isNavbarCollapsed"
-        data-target="#navbarsDefault"
-        aria-controls="navbarsDefault"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
-        <ul class="navbar-nav mr-auto">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/" [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }">{{ title }}</a>
+    <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+      data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>
+              <i class="fas fa-gamepad"></i> Game
+            </button>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <button class="dropdown-item" routerLink="/game" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <i class="fas fa-list-ul"></i> Games
+              </button>
+              <button class="dropdown-item" routerLink="/game/add" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <i class="fas fa-plus"></i> add a game
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>
+              <i class="far fa-comments"></i> Discussion
+            </button>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <button class="dropdown-item" routerLink="/discussion" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <i class="fas fa-list-ul"></i> Discussions
+              </button>
+              <button class="dropdown-item" routerLink="/discussion/add" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <i class="fas fa-plus"></i> add a discussion
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>
+              <i class="far fa-user"></i> {{user}}
+            </button>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <button class="dropdown-item" routerLink="/user/{{user}}" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <i class="fas fa-list-ul"></i> my Discussions
+              </button>
+              <button class="dropdown-item" routerLink="/user/edit" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <i class="far fa-edit"></i> edit password
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"><i class="fas fa-info"></i> About</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto logoutBtn">
+        <ng-template [ngIf]="authService.isAuthenticated()">
           <li class="nav-item">
-            <a
-              class="nav-link disabled"
-              routerLink="/"
-              [routerLinkActive]="['active']"
-              [routerLinkActiveOptions]="{ exact: true }"
-              tabindex="-1"
-              aria-disabled="true"
-              >Disabled</a
-            >
+            <a class="roundBtn nav-item btn btn-primary button-right" (click)="authService.logout()" routerLink="/login"
+              [routerLinkActive]="['active']"><i class="fas fa-sign-out-alt"></i> Log out</a>
           </li>
-          <li class="nav-item dropdown">
-            <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>
-                Game
-              </button>
-              <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <button
-                  class="dropdown-item"
-                  routerLink="/game"
-                  [routerLinkActive]="['active']"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                >
-                  Games
-                </button>
-                <button
-                  class="dropdown-item"
-                  routerLink="/game/add"
-                  [routerLinkActive]="['active']"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                >
-                  add game
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>
-                Discussion
-              </button>
-              <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <button
-                  class="dropdown-item"
-                  routerLink="/discussion"
-                  [routerLinkActive]="['active']"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                >
-                  Discussions
-                </button>
-                <button
-                  class="dropdown-item"
-                  routerLink="/discussion/add"
-                  [routerLinkActive]="['active']"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                >
-                  add discussion
-                </button>
-              </div>
-            </div>
+        </ng-template>
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+          <li class="nav-item">
+            <a class="roundBtn nav-item btn btn-primary button-right" style="margin-right: 5px;" routerLink="/login"
+              [routerLinkActive]="['active']"><i class="fas fa-sign-in-alt"></i> Log in</a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="about"
-              [routerLinkActive]="['active']"
-              [routerLinkActiveOptions]="{ exact: true }"
-              >About</a
-            >
+            <a class="roundBtn nav-item btn btn-primary button-right" routerLink="/register"
+              [routerLinkActive]="['active']"><i class="fas fa-file-contract"></i> register</a>
           </li>
-        </ul>
-        <ul class="navbar-nav ml-auto logoutBtn">
-            <ng-template [ngIf]="authService.isAuthenticated()">
-              <li class="nav-item">
-                <a class="roundBtn nav-item btn btn-primary button-right" (click)="authService.logout()" routerLink="/login" [routerLinkActive]="['active']">Log out</a>
-              </li>
-            </ng-template>
-            <ng-template [ngIf]="!authService.isAuthenticated()">
-                <li class="nav-item">
-                  <a class="roundBtn nav-item btn btn-primary button-right" style="margin-right: 5px;" routerLink="/login" [routerLinkActive]="['active']">Log in</a>
-                </li>
-                <li class="nav-item">
-                  <a class="roundBtn nav-item btn btn-primary button-right" routerLink="/register" [routerLinkActive]="['active']">register</a>
-                </li>
-            </ng-template>
-          </ul>
-      </div>
+        </ng-template>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
