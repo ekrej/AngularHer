@@ -80,10 +80,6 @@ export class DiscussionDetailComponent implements OnInit {
   deleteForReal(){
     this.discussionService.deleteDiscussion(this.id);
     this.dialog.closeAll();
-    this._snackBar.open("discussion is deleted",null,{
-      duration: 5000,
-      panelClass: ['delete-snackbar']
-    });
   }
 
   cancel(){

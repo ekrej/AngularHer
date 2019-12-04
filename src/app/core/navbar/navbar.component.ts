@@ -16,5 +16,6 @@ export class NavbarComponent {
   ) { }
 
   @Input() title: string
+  user = this.authService.getUser();
   isNavbarCollapsed = true
 }

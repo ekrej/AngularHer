@@ -7,17 +7,21 @@ import { GameModule } from './game/game.module';
 import { DiscussionModule } from './discussion/discussion.module'
 import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from "./register/register.component";
+import { EditComponent } from './user/edit/edit.component';
+import { DetailComponent } from './user/detail/detail.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'discussion', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'about', component: UsecasesComponent },
   { path: 'discussion', loadChildren:() => DiscussionModule },
   { path: 'game', loadChildren:() => GameModule },
   { path: 'login', component: SigninComponent },
   { path: 'register', component: RegisterComponent},
-  { path: '**', redirectTo: '' }
+  { path: 'user/edit', component: EditComponent},
+  { path: 'user/:user', component: DetailComponent},
+  { path: '**', redirectTo: 'discussion' }
 ]
 
 
