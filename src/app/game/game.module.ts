@@ -12,6 +12,7 @@ import { GameCardComponent } from './game-card/game-card.component';
 import { DiscussionCardComponent } from './discussion-card/discussion-card.component'
 
 import { MatCardModule } from '@angular/material';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatCardModule } from '@angular/material';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    MatCardModule
+    MatCardModule,
+    Ng2SearchPipeModule
   ],
   providers: [GameService, DiscussionService],
   bootstrap: []

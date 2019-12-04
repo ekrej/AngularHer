@@ -74,3 +74,13 @@ $colors: (
 }
 
 ::ng-deep .downvote-snackbar .mat-simple-snackbar-action { color: $button-delete-background-color; }
+
+.search{
+    box-shadow: 10px 10px 5px 0px rgba(50, 50, 50, 0.75); 
+    font-family:'FontAwesome', Arial;
+}
+.search::before  {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f002"
+  }

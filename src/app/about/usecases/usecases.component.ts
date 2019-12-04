@@ -244,6 +244,32 @@ export class UsecasesComponent implements OnInit {
       precondition: 'De actor is ingelogd en de gebruiker heeft de comment al gedownvoted',
       postcondition: 'Het doel is bereikt.'
     },
+    {
+      id: 'UC-20',
+      name: 'wachtwoord wijzigen',
+      description: 'Hiermee kan iemand zijn/haar wachtwoord wijzigen',
+      scenario: [
+      'Gebruiker gaat naar user => edit password.',
+      'de gebruiker vult het oude en het nieuwe wachtwoord in',
+      'de gebruiker klikt op save.',
+      'de applicatie vervangt het wachtwoord als het oude wachtwoord goed is.'],
+      actor: this.PLAIN_USER,
+      precondition: 'De actor is ingelogd',
+      postcondition: 'Het doel is bereikt.'
+    },
+    {
+      id: 'UC-21',
+      name: 'mijn discussies',
+      description: 'Hiermee kan iemand zijn/haar discussies zien',
+      scenario: [
+      'Gebruiker gaat naar user => my discussions.',
+      'de gebruiker vult het oude en het nieuwe wachtwoord in',
+      'de gebruiker klikt op save.',
+      'de applicatie vervangt het wachtwoord als het oude wachtwoord goed is.'],
+      actor: this.PLAIN_USER,
+      precondition: 'De actor is ingelogd',
+      postcondition: 'Het doel is bereikt.'
+    },
   ]
 
   constructor() {}

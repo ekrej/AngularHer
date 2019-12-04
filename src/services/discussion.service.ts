@@ -95,4 +95,8 @@ export class DiscussionService{
             this.router.navigate([`/discussion`]);
         });
     }
+
+    getDiscussionsOfUser(id: string){
+        return this.http.get<Discussion[]>(`https://angularherapi.herokuapp.com/api/discussion/user/${id}`)
+     }
 }

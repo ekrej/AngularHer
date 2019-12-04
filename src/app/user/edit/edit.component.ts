@@ -11,9 +11,9 @@ import { MatDialog, MatSnackBar } from '@angular/material';
 export class EditComponent implements OnInit {
 
   constructor(private authService: AuthService, private dialog: MatDialog, private _snackBar: MatSnackBar) { }
-  registerForm: FormGroup;
+  editForm: FormGroup;
   ngOnInit() {
-    this.registerForm = new FormGroup({
+    this.editForm = new FormGroup({
 
       currentPassword: new FormControl('', [
         Validators.required
@@ -26,11 +26,11 @@ export class EditComponent implements OnInit {
   
 
 get currentPassword() {
-  return this.registerForm.get('currentPassword');
+  return this.editForm.get('currentPassword');
 }
 
 get newPassword() {
-  return this.registerForm.get('newPassword');
+  return this.editForm.get('newPassword');
 }
 
 onSubmitWarning(ref: TemplateRef<any>){
@@ -39,6 +39,7 @@ onSubmitWarning(ref: TemplateRef<any>){
 
 onSubmit() {
   this.authService.updateUser(this.currentPassword.value, this.newPassword.value);
+  this.dialog.closeAll();
 }
 
 cancel(){

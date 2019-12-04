@@ -7,8 +7,12 @@ import { Discussion } from 'src/models/discussion.model';
   templateUrl: './discussion-list.component.html',
   styleUrls: ['./discussion-list.component.scss']
 })
+
+
+
 export class DiscussionListComponent implements OnInit {
-  discussions: Discussion[]
+  discussions: Discussion[];
+  searchText;
   constructor(private discussionService: DiscussionService) { }
 
   ngOnInit() {

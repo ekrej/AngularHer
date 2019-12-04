@@ -16,6 +16,7 @@ export class GameDetailComponent implements OnInit {
   discussions: Discussion[] | undefined
   date:string; 
   id: string
+  searchText;
   constructor(private gameService: GameService, private route: ActivatedRoute, private router: Router, private discussionService: DiscussionService) { }
 
   ngOnInit() {
